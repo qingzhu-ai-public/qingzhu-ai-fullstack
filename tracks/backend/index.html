@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>后端 · 青竹 AI 全栈指南</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="logo" href="../../index.html">青竹 · <span>AI 全栈指南</span></a>
+  <nav class="topnav">
+    <a href="../backend/index.html">后端</a>
+    <a href="../frontend/index.html">前端</a>
+    <a href="../mobile/index.html">移动端</a>
+    <a href="../cross-platform/index.html">跨平台</a>
+    <a href="../ai/index.html">AI 应用</a>
+  </nav>
+</div></div>
+<main class="wrap">
+  <a class="backlink" href="../../index.html">← 返回指南首页</a>
+  <div class="track-hero"><span class="icon">🛠️</span><div><h1>后端</h1><span class="en">BACKEND · Java / Python / Go / Node.js</span></div></div>
+  <p class="sec-desc">后端负责业务逻辑、数据存储、并发处理与系统集成。AI 时代你不必精通每种语言的每个 API，但要懂它们的<b>并发模型、生态定位与适用边界</b>，才能按场景选对语言、把架构交给 AI 实现。</p>
+
+  <section>
+    <div class="sec-head"><h2>四门语言，各管一摊</h2><span class="en">LANGUAGES</span></div>
+    <div class="subgrid">
+      <div class="subcard"><div class="top"><span class="icon">☕</span><h3>Java</h3><span class="tag part">中级样板已写</span></div><p>企业级主力，JVM + Spring 生态。</p><ul><li>基础：JVM 内存/线程、GC、并发</li><li>框架：Spring Boot / MVC / 虚拟线程</li><li>架构：模块化单体 → 微服务、事务、消息队列</li></ul><div class="scene">大型业务系统、高并发网关、长期维护服务</div></div>
+      <div class="subcard"><div class="top"><span class="icon">🐍</span><h3>Python</h3><span class="tag wait">规划中</span></div><p>AI 与数据首选，开发效率高。</p><ul><li>基础：异步 asyncio、类型提示、包管理</li><li>框架：FastAPI / Django / Pydantic</li><li>架构：AI 服务、数据管道、任务队列</li></ul><div class="scene">AI 服务、数据处理、快速原型、自动化</div></div>
+      <div class="subcard"><div class="top"><span class="icon">🐹</span><h3>Go</h3><span class="tag wait">规划中</span></div><p>云原生标配，简洁高效。</p><ul><li>基础：goroutine / channel、接口、错误处理</li><li>框架：Gin / Echo / gRPC</li><li>架构：微服务、中间件、高并发 API</li></ul><div class="scene">微服务、云基础设施、高并发网关</div></div>
+      <div class="subcard"><div class="top"><span class="icon">🟢</span><h3>Node.js</h3><span class="tag wait">规划中</span></div><p>前后端同语言，事件驱动。</p><ul><li>基础：事件循环、异步、Stream</li><li>框架：Express / NestJS / Fastify</li><li>架构：BFF、实时应用、Serverless</li></ul><div class="scene">全栈 JS 团队、实时应用、BFF 聚合层</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>后端选型决策</h2><span class="en">WHEN TO USE WHAT</span></div>
+    <table>
+      <tr><th>场景约束</th><th>倾向</th><th>关键理由</th></tr>
+      <tr><td>大型团队、长期维护、强类型</td><td><b>Java</b></td><td>生态与人才储备、可维护性、JVM 调优空间</td></tr>
+      <tr><td>AI/数据密集、要快速出活</td><td><b>Python</b></td><td>模型与数据库最全、开发速度</td></tr>
+      <tr><td>高并发、低资源、易部署</td><td><b>Go</b></td><td>轻量并发、单二进制、云原生契合</td></tr>
+      <tr><td>前后端同栈、IO 密集实时</td><td><b>Node.js</b></td><td>技能复用、事件驱动、迭代快</td></tr>
+    </table>
+    <div class="callout teal"><span class="tag">交给 AI 的指令长这样</span>「用 Spring Boot 3 + JDK 21 虚拟线程做一个模块化单体的 AI 网关，按认证/限流/路由/计量分模块，配额扣减用事务保证不重扣，异步入账走 RabbitMQ + Outbox。」—— 你定架构与约束，AI 写实现，你验收。</div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>课程规划</h2><span class="en">ROADMAP</span></div>
+    <p class="sec-desc">Java 中级（11 课）样板已写，待并入本站；其余语言按「基础原理 → 框架 → 架构选型 → AI 辅助实战」同一模板展开。每课含图解、交互演练与自测。</p>
+  </section>
+</main>
+<footer><div class="wrap"><span>青竹 · AI 全栈指南 / 后端</span><span><a href="../../index.html">返回首页</a></span></div></footer>
+</body>
+</html>

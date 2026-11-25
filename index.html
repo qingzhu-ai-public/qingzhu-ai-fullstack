@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青竹 · AI 全栈指南 — 知道什么场景用什么架构，告诉 AI 执行</title>
+<meta name="description" content="AI 时代的全栈学习指南：学基础原理、框架与架构选型，判断什么场景用什么技术，把实现交给 AI。覆盖后端、前端、移动端、跨平台与 AI 应用开发。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="logo" href="index.html">青竹 · <span>AI 全栈指南</span></a>
+  <nav class="topnav">
+    <a href="tracks/backend/index.html">后端</a>
+    <a href="tracks/frontend/index.html">前端</a>
+    <a href="tracks/mobile/index.html">移动端</a>
+    <a href="tracks/cross-platform/index.html">跨平台</a>
+    <a href="tracks/ai/index.html">AI 应用</a>
+    <a class="ext" href="https://qingzhu-ai-public.github.io/qingzhu-blue/academy/" target="_blank" rel="noopener">蓝牙学堂 ↗</a>
+  </nav>
+</div></div>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="crumb">AI 时代的全栈学习指南</div>
+    <h1>不一定要亲手写每一行，<br>但要知道<em>什么场景该用什么架构</em></h1>
+    <p class="lead">这是一份「决策导向」的全栈指南。我们学基础原理、框架与架构的<b>适用边界</b>——搞清楚每种技术解决什么问题、什么场景该选它，然后用清晰的指令把实现交给 AI。懂原理、会选型、能指挥 AI，就是 AI 时代的全栈能力。</p>
+    <div class="pills"><span>后端 · Java / Python / Go / Node.js</span><span>前端 · Vue / React</span><span>移动端 · Android / iOS / 鸿蒙</span><span>跨平台 · Flutter / RN</span><span>AI 应用开发</span></div>
+  </div>
+
+  <section id="how">
+    <div class="sec-head"><h2>怎么用这份指南</h2><span class="en">HOW IT WORKS</span></div>
+    <p class="sec-desc">每个方向都按同一条主线组织：先懂原理，再会选型，最后交给 AI。不追求背诵 API，追求「遇到场景能做出正确判断」。</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>懂原理</h3><p>每个框架/架构解决什么问题、核心机制是什么、边界在哪。知道「为什么」，才不会被 AI 的错误答案带偏。</p></div>
+      <div class="step"><span class="n">2</span><h3>会选型</h3><p>按场景选技术：团队规模、性能要求、生态、交付速度。指南给出「什么场景用什么」的决策依据，而非唯一标准答案。</p></div>
+      <div class="step"><span class="n">3</span><h3>交给 AI</h3><p>把选好的架构和约束写成清晰指令，让 AI 生成实现。你负责判断对错、验收质量——这正是懂原理的价值。</p></div>
+    </div>
+  </section>
+
+  <section id="backend">
+    <div class="sec-head"><h2>① 后端</h2><span class="en">BACKEND</span><a href="tracks/backend/index.html" style="margin-left:auto;font-size:14px;">进入方向 →</a></div>
+    <p class="sec-desc">服务端语言与框架：处理业务逻辑、数据、并发与集成。选型看团队基因、性能诉求与生态。</p>
+    <div class="grid">
+      <div class="tcard"><div class="top"><span class="icon">☕</span><h3>Java</h3><span class="tag part">中级样板</span></div><p>企业级主力，Spring 生态成熟，强类型 + JVM 调优空间大。</p><div class="scene">场景：大型业务系统、高并发网关、长期维护的企业服务</div></div>
+      <div class="tcard"><div class="top"><span class="icon">🐍</span><h3>Python</h3><span class="tag wait">规划中</span></div><p>AI/数据首选，FastAPI/Django 开发快，胶水能力强。</p><div class="scene">场景：AI 服务、数据处理、快速原型、脚本自动化</div></div>
+      <div class="tcard"><div class="top"><span class="icon">🐹</span><h3>Go</h3><span class="tag wait">规划中</span></div><p>云原生标配，goroutine 高并发，单二进制部署简单。</p><div class="scene">场景：微服务、中间件、高并发 API、云基础设施</div></div>
+      <div class="tcard"><div class="top"><span class="icon">🟢</span><h3>Node.js</h3><span class="tag wait">规划中</span></div><p>前后端同语言，事件驱动 IO 密集，npm 生态庞大。</p><div class="scene">场景：BFF、实时应用、全栈 JS 团队、Serverless</div></div>
+    </div>
+  </section>
+
+  <section id="frontend">
+    <div class="sec-head"><h2>② 前端</h2><span class="en">FRONTEND</span><a href="tracks/frontend/index.html" style="margin-left:auto;font-size:14px;">进入方向 →</a></div>
+    <p class="sec-desc">浏览器端的界面与交互。两大框架思想不同，选型看团队习惯与项目复杂度。</p>
+    <div class="grid">
+      <div class="tcard"><div class="top"><span class="icon">💚</span><h3>Vue</h3><span class="tag wait">规划中</span></div><p>渐进式、模板直观、上手快，中文生态友好。</p><div class="scene">场景：中后台、快速交付、中小型团队、渐进改造</div></div>
+      <div class="tcard"><div class="top"><span class="icon">⚛️</span><h3>React</h3><span class="tag wait">规划中</span></div><p>函数式 + 组件化，生态最大，灵活但需自行组合。</p><div class="scene">场景：复杂交互、大型应用、跨端复用（RN）、强生态需求</div></div>
+    </div>
+  </section>
+
+  <section id="mobile">
+    <div class="sec-head"><h2>③ 移动端</h2><span class="en">MOBILE</span><a href="tracks/mobile/index.html" style="margin-left:auto;font-size:14px;">进入方向 →</a></div>
+    <p class="sec-desc">原生开发：直接调用平台能力，性能与体验上限最高。三套平台各有语言与框架。</p>
+    <div class="grid">
+      <div class="tcard"><div class="top"><span class="icon">🤖</span><h3>Android</h3><span class="tag wait">规划中</span></div><p>Kotlin + Jetpack Compose，声明式 UI，Google 生态。</p><div class="scene">场景：Android 原生应用、深度系统集成、硬件能力</div></div>
+      <div class="tcard"><div class="top"><span class="icon">🍎</span><h3>iOS</h3><span class="tag wait">规划中</span></div><p>Swift + SwiftUI，苹果生态，审核与隐私规范严格。</p><div class="scene">场景：iPhone/iPad 应用、苹果生态联动、高品质体验</div></div>
+      <div class="tcard"><div class="top"><span class="icon">🌸</span><h3>鸿蒙</h3><span class="tag wait">规划中</span></div><p>ArkTS + ArkUI，分布式能力，国产生态新增长极。</p><div class="scene">场景：HarmonyOS 应用、多设备协同、信创/国产适配</div></div>
+    </div>
+  </section>
+
+  <section id="cross">
+    <div class="sec-head"><h2>④ 跨平台</h2><span class="en">CROSS-PLATFORM</span><a href="tracks/cross-platform/index.html" style="margin-left:auto;font-size:14px;">进入方向 →</a></div>
+    <p class="sec-desc">一套代码多端运行，用开发效率换部分原生上限。选型看团队技术栈与性能要求。</p>
+    <div class="grid">
+      <div class="tcard"><div class="top"><span class="icon">🦋</span><h3>Flutter</h3><span class="tag wait">规划中</span></div><p>Dart + 自绘引擎，多端一致性好，性能接近原生。</p><div class="scene">场景：多端统一 UI、品牌化界面、独立 App 团队</div></div>
+      <div class="tcard"><div class="top"><span class="icon">📱</span><h3>React Native</h3><span class="tag wait">规划中</span></div><p>JS/TS + 原生组件，复用 Web 团队技能，生态成熟。</p><div class="scene">场景：已有 React 团队、快速迭代、内容型 App</div></div>
+    </div>
+  </section>
+
+  <section id="ai">
+    <div class="sec-head"><h2>⑤ AI 应用开发</h2><span class="en">AI APPLICATION</span><a href="tracks/ai/index.html" style="margin-left:auto;font-size:14px;">进入方向 →</a></div>
+    <p class="sec-desc">把大模型能力变成产品：调用、增强、编排、评估。这是全栈指南的「AI 时代」核心增量。</p>
+    <div class="grid">
+      <div class="tcard"><div class="top"><span class="icon">🔌</span><h3>LLM 接入</h3><span class="tag wait">规划中</span></div><p>API 调用、流式输出、多模型路由、成本与限流。</p><div class="scene">场景：对话产品、AI 网关、模型代理</div></div>
+      <div class="tcard"><div class="top"><span class="icon">📚</span><h3>RAG 检索增强</h3><span class="tag wait">规划中</span></div><p>向量库 + 检索 + 生成，让模型用上私有知识。</p><div class="scene">场景：企业知识库、文档问答、客服</div></div>
+      <div class="tcard"><div class="top"><span class="icon">🧩</span><h3>Agent 编排</h3><span class="tag wait">规划中</span></div><p>工具调用、多步推理、工作流编排与可控性。</p><div class="scene">场景：自动化任务、智能助手、复杂流程</div></div>
+      <div class="tcard"><div class="top"><span class="icon">📊</span><h3>评估与可观测</h3><span class="tag wait">规划中</span></div><p>质量评估、幻觉治理、链路追踪、成本监控。</p><div class="scene">场景：AI 产品上线、质量保障、持续优化</div></div>
+    </div>
+  </section>
+
+  <section id="decide">
+    <div class="sec-head"><h2>架构选型心法</h2><span class="en">DECISION FIRST</span></div>
+    <p class="sec-desc">没有「最好的技术」，只有「最适合场景的技术」。下面是几个典型判断，体会选型思路——这正是你要学会、然后告诉 AI 的部分。</p>
+    <table>
+      <tr><th>场景</th><th>倾向选型</th><th>为什么</th></tr>
+      <tr><td>大型企业业务系统、长期维护</td><td><b>Java + Spring</b></td><td>生态成熟、强类型、人才多、可维护性强</td></tr>
+      <tr><td>AI 服务 / 数据管道 / 快速原型</td><td><b>Python + FastAPI</b></td><td>AI 库最全、开发快、与模型生态无缝</td></tr>
+      <tr><td>高并发微服务 / 云原生中间件</td><td><b>Go</b></td><td>并发模型轻、部署简单、资源占用低</td></tr>
+      <tr><td>全栈 JS 团队 / 实时 BFF</td><td><b>Node.js</b></td><td>前后端同语言、IO 密集高效、迭代快</td></tr>
+      <tr><td>已有 React 团队做 App</td><td><b>React Native</b></td><td>复用技能与组件、生态成熟</td></tr>
+      <tr><td>多端统一品牌 UI、独立 App</td><td><b>Flutter</b></td><td>自绘引擎一致性好、性能接近原生</td></tr>
+      <tr><td>私有知识问答</td><td><b>RAG</b>（而非微调）</td><td>知识可更新、成本低、可溯源</td></tr>
+    </table>
+    <div class="callout"><span class="tag">核心心法</span>选型是「权衡」不是「站队」。先问场景约束（团队、性能、生态、交付速度），再选技术，最后把架构与约束写成指令交给 AI 实现。你保留判断与验收的权力。</div>
+  </section>
+
+  <section id="more">
+    <div class="sec-head"><h2>更多专项</h2><span class="en">MORE</span></div>
+    <div class="ext-banner">
+      <span class="icon">📶</span>
+      <div><h3>青竹蓝牙学堂</h3><p>物联网 / 嵌入式专项：通用基础 + Android / iOS / 鸿蒙 / Flutter / RN 五端 BLE 实战，62 门正课已上线。独立站点。</p></div>
+      <a class="go" href="https://qingzhu-ai-public.github.io/qingzhu-blue/academy/" target="_blank" rel="noopener">前往蓝牙学堂 ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span>青竹 · AI 全栈指南 — 懂原理 · 会选型 · 指挥 AI</span>
+  <span>框架已上线，各方向内容持续填充中</span>
+</div></footer>
+</body>
+</html>
