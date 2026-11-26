@@ -44,7 +44,7 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner {
-  max-width: 1080px; margin: 0 auto; padding: 0 20px; height: 56px;
+  max-width: none; margin: 0; padding: 0 14px; height: 56px;
   display: flex; align-items: center; gap: 1.2rem;
 }
 .brand {
@@ -69,7 +69,7 @@ a:hover { text-decoration: underline; }
 .repo-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 .repo-link .icon { width: .9rem; height: .9rem; fill: currentColor; }
 
-.page { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.page { max-width: none; margin: 0; padding: 0 14px; }
 
 /* 首页：介绍语 + 方向块（块内按技术栈直达第一课） */
 .home-lead { max-width: 54rem; padding: 1.8rem 0 1.5rem; font-size: 1rem; color: var(--body); }
@@ -154,8 +154,8 @@ a.lesson:hover { background: var(--accent-soft); color: var(--accent); text-deco
 
 /* 文章页：左课程目录 / 中正文 / 右文章目录 */
 .doc-layout {
-  display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px;
-  gap: 28px; align-items: start; padding: 1.6rem 0 3.5rem;
+  display: grid; grid-template-columns: 176px minmax(0, 1fr) 150px;
+  gap: 20px; align-items: start; padding: 1.6rem 0 3.5rem;
 }
 .lesson-nav, .article-toc { position: sticky; top: 4.2rem; }
 .nav-head {
