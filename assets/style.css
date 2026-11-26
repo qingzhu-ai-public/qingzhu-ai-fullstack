@@ -163,6 +163,10 @@ a.lesson:hover { background: var(--accent-soft); color: var(--accent); text-deco
   color: var(--accent); border-left-color: var(--accent);
   background: linear-gradient(90deg, var(--accent-soft), transparent); text-decoration: none;
 }
+.article-toc a.on {
+  color: var(--accent); border-left-color: var(--accent); font-weight: 600;
+  background: linear-gradient(90deg, var(--accent-soft), transparent);
+}
 
 /* 教程组件：章节编号徽章 + 本课路线（沿用 Java 学堂课程模板） */
 .sec-no {

@@ -9,7 +9,7 @@ window.QZ_CATALOG = (function () {
       stacks: [
         { id: 'java', name: 'Java', levels: [
           { name: '初级', lessons: ['JVM 内存', '线程', '垃圾回收与并发'] },
-          { name: '中级', lessons: ['Spring Boot', 'Spring MVC', 'JDK 虚拟线程'] },
+          { name: '中级', lessons: ['六道关与模块设计', 'JVM 线程与诊断', '事务·AOP·安全链路', '数据库与 Redis', '统一接入与路由', '计量配额限流', '幂等与韧性', '消息队列与异步', '可观测与压测', 'CI/CD 与交付', '毕业整合上线'] },
           { name: '高级', lessons: ['模块化单体与微服务的取舍', '事务', '消息队列'] }
         ] },
         { id: 'python', name: 'Python', levels: [

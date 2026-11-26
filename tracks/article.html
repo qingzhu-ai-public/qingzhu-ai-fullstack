@@ -6,6 +6,7 @@
   <title>课程文章 · 青竹全栈学习指南</title>
   <link rel="icon" href="../assets/brand.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/content/lesson.css">
 </head>
 <body>
   <a class="skip-link" href="#main">跳到正文</a>
@@ -51,6 +52,7 @@
   </main>
 
   <script src="../assets/catalog.js"></script>
+  <script src="../assets/content/java-mid.js"></script>
   <script>
     (function () {
       var SECTIONS = [
@@ -98,25 +100,74 @@
 
       document.title = lessonName + ' · ' + stack.name + ' · 青竹全栈学习指南';
       document.getElementById('articleTitle').textContent = lessonName;
-      document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 示例正文，正式内容待补';
       document.getElementById('navHead').textContent = track.label + ' / ' + stack.name;
       document.getElementById('backLink').setAttribute('href', track.dir + '/index.html');
       document.getElementById('lessonNav').innerHTML = QZ_CATALOG.levelsHtml(trackId, stack, 'article.html', lessonName);
 
-      document.getElementById('toc').innerHTML = SECTIONS.map(function (s, i) {
-        return '<a href="#sec-' + (i + 1) + '">' + (i + 1) + '. ' + esc(s.title) + '</a>';
-      }).join('');
-      document.getElementById('articleBody').innerHTML =
-        '<div class="journey" aria-label="本课路线">' + SECTIONS.map(function (s, i) {
-          return '<div class="j-step"><span class="n">' + (i + 1) + '</span>' +
-            '<span class="t">' + esc(s.title) + '</span></div>';
-        }).join('') + '</div>' +
-        SECTIONS.map(function (s, i) {
-          return '<section class="article-section" id="sec-' + (i + 1) + '">' +
-            '<h2><span class="sec-no">' + (i + 1) + '</span>' + esc(s.title) + '</h2>' +
-            s.paras.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
-          '</section>';
+      function runLessonEnhancements() {
+        var tocLinks = [].slice.call(document.querySelectorAll('#toc a'));
+        var secs = tocLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (es) {
+            es.forEach(function (e) {
+              if (e.isIntersecting) {
+                tocLinks.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+              }
+            });
+          }, { rootMargin: '-20% 0px -70% 0px' });
+          secs.forEach(function (s) { if (s) io.observe(s); });
+        }
+        var box = document.getElementById('quiz-box');
+        if (!box || typeof QUIZ === 'undefined') return;
+        var solved = 0;
+        QUIZ.forEach(function (item, qi) {
+          var h = document.createElement('div'); h.className = 'quiz-q'; h.textContent = item.q; box.appendChild(h);
+          var ex = document.createElement('div'); ex.className = 'explain';
+          item.opts.forEach(function (o) {
+            var text = o[0], ok = o[1], why = o[2];
+            var b = document.createElement('button'); b.className = 'opt'; b.textContent = text; b.dataset.q = qi;
+            b.addEventListener('click', function () {
+              var sib = [].slice.call(box.querySelectorAll('[data-q="' + qi + '"]'));
+              if (sib.some(function (s) { return s.disabled; })) return;
+              sib.forEach(function (s) { s.disabled = true; });
+              b.classList.add(ok ? 'right' : 'wrong');
+              ex.className = 'explain show ' + (ok ? 'good' : 'bad');
+              ex.textContent = (ok ? '✓ ' : '✗ ') + why;
+              if (ok) { solved++; if (solved === QUIZ.length) { var d = document.getElementById('quiz-done'); if (d) d.style.display = 'block'; } }
+              else setTimeout(function () { sib.forEach(function (s) { s.disabled = false; s.classList.remove('wrong'); }); ex.className = 'explain'; }, 2000);
+            });
+            box.appendChild(b);
+          });
+          box.appendChild(ex);
+        });
+      }
+
+      var content = (window.QZ_CONTENT && QZ_CONTENT.get(trackId, stack.id, lessonName)) || null;
+      if (content) {
+        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 青竹 Java 学堂 · 含交互演练与自测';
+        document.getElementById('articleBody').innerHTML = content.body;
+        document.getElementById('toc').innerHTML = content.toc.map(function (t) {
+          return '<a href="#' + esc(t.id) + '">' + esc(t.title) + '</a>';
         }).join('');
+        var ls = document.createElement('script'); ls.textContent = content.scripts; document.body.appendChild(ls);
+        runLessonEnhancements();
+      } else {
+        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 示例正文，正式内容待补';
+        document.getElementById('toc').innerHTML = SECTIONS.map(function (s, i) {
+          return '<a href="#sec-' + (i + 1) + '">' + (i + 1) + '. ' + esc(s.title) + '</a>';
+        }).join('');
+        document.getElementById('articleBody').innerHTML =
+          '<div class="journey" aria-label="本课路线">' + SECTIONS.map(function (s, i) {
+            return '<div class="j-step"><span class="n">' + (i + 1) + '</span>' +
+              '<span class="t">' + esc(s.title) + '</span></div>';
+          }).join('') + '</div>' +
+          SECTIONS.map(function (s, i) {
+            return '<section class="article-section" id="sec-' + (i + 1) + '">' +
+              '<h2><span class="sec-no">' + (i + 1) + '</span>' + esc(s.title) + '</h2>' +
+              s.paras.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
+            '</section>';
+          }).join('');
+      }
     })();
   </script>
 </body>

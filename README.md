@@ -10,7 +10,7 @@
 |---|---|---|
 | 青竹蓝牙学堂：通用基础 + Android / iOS / 鸿蒙 / Flutter / RN 五端 BLE 实战，共 62 门正课 | 已上线 | [蓝牙学堂](https://qingzhu-ai-public.github.io/qingzhu-blue/academy/) |
 | 蓝牙学堂 Android 端 SDK 与示例源码 | 已开源 | [qingzhu-ble-android](https://github.com/qingzhu-ai-public/qingzhu-ble-android) |
-| Java 中级 11 课：用 Spring 搭 AI 网关 | 整理中，待并入本站 | 底稿在私有仓 `qingzhu-ai-fullstack-universe/courses/fullstack-java` |
+| Java 中级 11 课：用 Spring 搭 AI 网关（图解 + 交互演练 + 自测） | 已上线 | [后端 / Java / 中级](tracks/backend/index.html) |
 | 后端、前端、移动端、跨平台、AI 应用五个方向的学习大纲与选型笔记 | 已上线 | `tracks/` 下对应页面 |
 
 ## 学习方法
@@ -25,6 +25,9 @@ qingzhu-ai-fullstack/
 ├── assets/
 │   ├── style.css              ← 定稿样式（沿用青竹 Java 学堂 / 蓝牙学堂课程模板配色）
 │   ├── catalog.js             ← 课程目录数据：首页、方向页、文章页左栏共用
+│   ├── content/
+│   │   ├── lesson.css         ← 课程正文组件样式（作用域 .article：图解/演练/自测/依据卡）
+│   │   └── java-mid.js        ← Java 中级 11 课正文注册表（命中后渲染真实正文，否则回退占位）
 │   ├── brand.svg              ← 站点图标
 │   └── icons.svg              ← 图标集（GitHub）
 └── tracks/
