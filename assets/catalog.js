@@ -1,5 +1,6 @@
 /* 课程目录数据：方向页、文章页左侧目录共用。
-   条目全部来自原有各方向页的大纲，未新增课程。 */
+   只有已编写真实正文的级别才列课名（ready:true）；
+   其余级别 lessons 为空数组，目录显示「整理中」，不列占位课名。 */
 window.QZ_CATALOG = (function () {
   'use strict';
 
@@ -8,24 +9,24 @@ window.QZ_CATALOG = (function () {
       label: '后端开发', dir: 'backend',
       stacks: [
         { id: 'java', name: 'Java', levels: [
-          { name: '初级', lessons: ['JVM 内存', '线程', '垃圾回收与并发'] },
+          { name: '初级', ready: true, lessons: ['认识后端：第一个能跑的服务', 'Java 本身：对象、集合与并发', 'Web 通用语言：HTTP、REST 与 JSON', '看懂 Spring Boot：三层与依赖注入', '账号系统：哈希、JWT 与数据权限', 'AI 聊天变真：SSE 与跨线程坑', '能交付：测试、日志、文档与 Docker', '进阶路线：能跑、能扛、能负责', '毕业考：串起来独立交付'] },
           { name: '中级', ready: true, lessons: ['六道关与模块设计', 'JVM 线程与诊断', '事务·AOP·安全链路', '数据库与 Redis', '统一接入与路由', '计量配额限流', '幂等与韧性', '消息队列与异步', '可观测与压测', 'CI/CD 与交付', '毕业整合上线'] },
-          { name: '高级', lessons: ['模块化单体与微服务的取舍', '事务', '消息队列'] }
+          { name: '高级', ready: true, lessons: ['把模糊需求变成系统战略', '架构取舍与质量属性', '划边界：领域、系统与团队', '数据一致性与 Saga/Outbox', '平台契约与自助接入', '部署形态与弹性取舍', 'SLO、容灾与业务连续性', '零信任与供应链安全', '成本账与技术演进', '带团队与带 AI 交付', '毕业：平台分阶段交付'] }
         ] },
         { id: 'python', name: 'Python', levels: [
-          { name: '初级', lessons: ['asyncio 异步编程', '类型提示', '包管理'] },
-          { name: '中级', lessons: ['FastAPI', 'Django', 'Pydantic'] },
-          { name: '高级', lessons: ['模型服务', '数据管道', '任务队列', '自动化脚本'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'go', name: 'Go', levels: [
-          { name: '初级', lessons: ['goroutine', 'channel', '接口与错误处理'] },
-          { name: '中级', lessons: ['Gin', 'Echo', 'gRPC'] },
-          { name: '高级', lessons: ['微服务', '中间件', '高并发网关'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'node', name: 'Node.js', levels: [
-          { name: '初级', lessons: ['事件循环', '异步 I/O', 'Stream'] },
-          { name: '中级', lessons: ['Express', 'NestJS', 'Fastify'] },
-          { name: '高级', lessons: ['面向前端的后端（BFF）', '实时应用', 'Serverless'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] }
       ]
     },
@@ -33,14 +34,14 @@ window.QZ_CATALOG = (function () {
       label: '前端开发', dir: 'frontend',
       stacks: [
         { id: 'vue', name: 'Vue', levels: [
-          { name: '初级', lessons: ['响应式原理', '组合式 API', '组件生命周期'] },
-          { name: '中级', lessons: ['Vue 3', 'Vite', 'Pinia', 'Vue Router'] },
-          { name: '高级', lessons: ['组件拆分', '状态管理', 'Nuxt 服务端渲染'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'react', name: 'React', levels: [
-          { name: '初级', lessons: ['JSX', 'Hooks', '渲染与协调机制'] },
-          { name: '中级', lessons: ['React 18', 'Next.js', '状态管理库'] },
-          { name: '高级', lessons: ['组件组合', '服务端组件', '跨端逻辑复用'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] }
       ]
     },
@@ -48,19 +49,19 @@ window.QZ_CATALOG = (function () {
       label: '移动端开发', dir: 'mobile',
       stacks: [
         { id: 'android', name: 'Android', levels: [
-          { name: '初级', lessons: ['Kotlin', '协程', 'Activity 与 Fragment 生命周期'] },
-          { name: '中级', lessons: ['Jetpack Compose', 'ViewModel', 'Room'] },
-          { name: '高级', lessons: ['MVVM', '模块化', '后台任务与权限管理'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'ios', name: 'iOS', levels: [
-          { name: '初级', lessons: ['Swift', 'async/await', 'App 生命周期'] },
-          { name: '中级', lessons: ['SwiftUI', 'Combine', 'SwiftData'] },
-          { name: '高级', lessons: ['MVVM', '隐私权限', 'App 审核要求'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'harmony', name: '鸿蒙', levels: [
-          { name: '初级', lessons: ['ArkTS', '状态管理', 'Ability 生命周期'] },
-          { name: '中级', lessons: ['ArkUI 声明式界面', '分布式能力'] },
-          { name: '高级', lessons: ['多设备协同', '国产化环境适配'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] }
       ]
     },
@@ -68,14 +69,14 @@ window.QZ_CATALOG = (function () {
       label: '跨平台开发', dir: 'cross-platform',
       stacks: [
         { id: 'flutter', name: 'Flutter', levels: [
-          { name: '初级', lessons: ['Dart', 'Widget 树', '状态管理', '渲染引擎'] },
-          { name: '中级', lessons: ['Flutter', 'Riverpod', 'Bloc'] },
-          { name: '高级', lessons: ['多端一致的界面', '平台通道', '性能优化'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'rn', name: 'React Native', levels: [
-          { name: '初级', lessons: ['JSX', '原生组件', 'React Native 新架构'] },
-          { name: '中级', lessons: ['Expo', '导航', '状态管理'] },
-          { name: '高级', lessons: ['接入原生模块', '热更新', 'Web 业务逻辑复用'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] }
       ]
     },
@@ -83,24 +84,24 @@ window.QZ_CATALOG = (function () {
       label: 'AI 应用开发', dir: 'ai',
       stacks: [
         { id: 'llm', name: 'LLM 接入', levels: [
-          { name: '初级', lessons: ['API 调用', '流式输出', 'Token 计费', '上下文窗口'] },
-          { name: '中级', lessons: ['多模型路由', '限流', '超时', '降级'] },
-          { name: '高级', lessons: ['直连 API 或经过网关', '自托管或使用云服务'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'rag', name: 'RAG 检索增强', levels: [
-          { name: '初级', lessons: ['嵌入', '向量检索', '重排与生成'] },
-          { name: '中级', lessons: ['文档分块', '向量库', '引用溯源'] },
-          { name: '高级', lessons: ['检索增强', '微调', '长上下文'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'agent', name: 'Agent 编排', levels: [
-          { name: '初级', lessons: ['工具调用', 'ReAct', '规划与反思'] },
-          { name: '中级', lessons: ['工作流', '状态管理', '工具权限'] },
-          { name: '高级', lessons: ['单个 Agent', '多 Agent 协作', '固定流程'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] },
         { id: 'eval', name: '评估与可观测', levels: [
-          { name: '初级', lessons: ['质量评估', '幻觉与回归测试'] },
-          { name: '中级', lessons: ['链路追踪', '成本监控', 'A/B 测试'] },
-          { name: '高级', lessons: ['离线评估', '在线监控'] }
+          { name: '初级', lessons: [] },
+          { name: '中级', lessons: [] },
+          { name: '高级', lessons: [] }
         ] }
       ]
     }
@@ -129,29 +130,61 @@ window.QZ_CATALOG = (function () {
     }
     return null;
   }
+  /* 第一个有真实内容的课（跳过空级别）；全空返回 null */
   function firstLesson(trackId, stackId) {
     var stack = getStack(trackId, stackId);
-    return stack && stack.levels[0].lessons[0];
+    if (!stack) return null;
+    for (var i = 0; i < stack.levels.length; i++) {
+      if (stack.levels[i].lessons.length) return stack.levels[i].lessons[0];
+    }
+    return null;
   }
   function lessonUrl(trackId, stackId, name, base) {
     return base + '?track=' + encodeURIComponent(trackId) +
       '&stack=' + encodeURIComponent(stackId) +
       '&lesson=' + encodeURIComponent(name);
   }
+  function trackUrl(trackId, base) {
+    return base.replace('article.html', getTrack(trackId).dir + '/index.html');
+  }
 
-  function levelsHtml(trackId, stack, articleBase, currentName) {
-    return stack.levels.map(function (level) {
+  /* collapsible=true 时级别组可折叠（文章页左栏）：当前课所在级别默认展开，其余收起 */
+  function levelsHtml(trackId, stack, articleBase, currentName, collapsible) {
+    var hasCurrent = stack.levels.some(function (lv) { return lv.lessons.indexOf(currentName) >= 0; });
+    return stack.levels.map(function (level, li) {
       var state = level.ready
         ? '<span class="lv-state on">已上线</span>'
         : '<span class="lv-state">待补</span>';
-      return '<section class="level"><h2>' + esc(level.name) + state + '</h2><div class="level-list">' +
-        level.lessons.map(function (name) {
-          var cur = name === currentName ? ' is-current' : '';
-          return '<a class="lesson' + cur + '" href="' + esc(lessonUrl(trackId, stack.id, name, articleBase)) + '">' + esc(name) + '</a>';
-        }).join('') +
-      '</div></section>';
+      var list = level.lessons.length
+        ? '<div class="level-list">' + level.lessons.map(function (name) {
+            var cur = name === currentName ? ' is-current' : '';
+            return '<a class="lesson' + cur + '" href="' + esc(lessonUrl(trackId, stack.id, name, articleBase)) + '">' + esc(name) + '</a>';
+          }).join('') + '</div>'
+        : '<div class="level-empty">课程整理中，暂未上线</div>';
+      if (!collapsible) {
+        return '<section class="level"><h2>' + esc(level.name) + state + '</h2>' + list + '</section>';
+      }
+      var open = hasCurrent ? level.lessons.indexOf(currentName) >= 0 : li === 0;
+      return '<section class="level' + (open ? ' open' : '') + '">' +
+        '<h2><button type="button" class="level-toggle" aria-expanded="' + (open ? 'true' : 'false') + '">' +
+          '<svg class="lv-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '<span class="lv-name">' + esc(level.name) + '</span>' +
+          '<span class="lv-count">' + level.lessons.length + '</span>' + state +
+        '</button></h2>' +
+        '<div class="level-body">' + list + '</div>' +
+      '</section>';
     }).join('');
   }
+
+  /* 折叠开关：事件委托，动态插入的目录也生效 */
+  document.addEventListener('click', function (e) {
+    var t = e.target && e.target.closest ? e.target.closest('.level-toggle') : null;
+    if (!t) return;
+    var sec = t.closest('.level');
+    if (!sec) return;
+    var open = sec.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 
   /* 方向页：渲染技术栈 tab 与三块课程目录，每条都可点进文章 */
   function renderTrackPage(trackId, articleBase) {
@@ -195,7 +228,7 @@ window.QZ_CATALOG = (function () {
     ai: '从接入模型开始，把检索、工具调用和评估接到产品里'
   };
 
-  /* 首页：几大块区域，每块列出该技术栈，点哪个进哪个的第一课 */
+  /* 首页：几大块区域，每块列出该技术栈；有课的点进第一课，没课的进方向目录 */
   function renderHome(articleBase) {
     var el = document.getElementById('homeBlocks');
     if (!el) return;
@@ -207,10 +240,16 @@ window.QZ_CATALOG = (function () {
         '<div class="hb-main"><h2 class="hb-name">' + esc(track.label) + '</h2>' +
           '<p class="hb-intro">' + esc(HOME_INTRO[id]) + '</p></div>' +
         '<div class="hb-stacks">' + track.stacks.map(function (stack) {
-          var first = stack.levels[0].lessons[0];
-          return '<a class="hb-stack" href="' + esc(lessonUrl(id, stack.id, first, articleBase)) + '">' +
+          var first = firstLesson(id, stack.id);
+          if (first) {
+            return '<a class="hb-stack" href="' + esc(lessonUrl(id, stack.id, first, articleBase)) + '">' +
+              '<span class="hs-name">' + esc(stack.name) + '</span>' +
+              '<span class="hs-first">第一课 · ' + esc(first) + ' →</span>' +
+            '</a>';
+          }
+          return '<a class="hb-stack empty" href="' + esc(trackUrl(id, articleBase)) + '">' +
             '<span class="hs-name">' + esc(stack.name) + '</span>' +
-            '<span class="hs-first">第一课 · ' + esc(first) + ' →</span>' +
+            '<span class="hs-first">课程整理中 · 查看目录 →</span>' +
           '</a>';
         }).join('') + '</div>' +
       '</section>';
@@ -220,7 +259,7 @@ window.QZ_CATALOG = (function () {
   return {
     tracks: tracks, getTrack: getTrack, getStack: getStack,
     findLesson: findLesson, firstLesson: firstLesson,
-    lessonUrl: lessonUrl, levelsHtml: levelsHtml,
+    lessonUrl: lessonUrl, trackUrl: trackUrl, levelsHtml: levelsHtml,
     renderTrackPage: renderTrackPage, renderHome: renderHome, esc: esc
   };
 })();

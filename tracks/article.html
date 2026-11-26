@@ -53,6 +53,8 @@
 
   <script src="../assets/catalog.js"></script>
   <script src="../assets/content/java-mid.js"></script>
+  <script src="../assets/content/java-beg.js"></script>
+  <script src="../assets/content/java-adv.js"></script>
   <script>
     (function () {
       var params = new URLSearchParams(location.search);
@@ -67,15 +69,16 @@
       }
       var found = QZ_CATALOG.findLesson(trackId, stack.id, lessonName);
       var esc = QZ_CATALOG.esc;
+      var displayName = found ? lessonName : stack.name + ' · 课程整理中';
 
       var current = document.querySelector('.site-nav a[data-track="' + trackId + '"]');
       if (current) current.classList.add('is-current');
 
-      document.title = lessonName + ' · ' + stack.name + ' · 青竹全栈学习指南';
-      document.getElementById('articleTitle').textContent = lessonName;
+      document.title = displayName + ' · ' + stack.name + ' · 青竹全栈学习指南';
+      document.getElementById('articleTitle').textContent = displayName;
       document.getElementById('navHead').textContent = track.label + ' / ' + stack.name;
       document.getElementById('backLink').setAttribute('href', track.dir + '/index.html');
-      document.getElementById('lessonNav').innerHTML = QZ_CATALOG.levelsHtml(trackId, stack, 'article.html', lessonName);
+      document.getElementById('lessonNav').innerHTML = QZ_CATALOG.levelsHtml(trackId, stack, 'article.html', lessonName, true);
 
       function runLessonEnhancements() {
         var tocLinks = [].slice.call(document.querySelectorAll('#toc a'));
@@ -128,7 +131,7 @@
         runLessonEnhancements();
       } else {
         if (tocAside) tocAside.hidden = true;
-        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 内容整理中';
+        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + (found ? ' / ' + found.level : '') + ' · 内容整理中';
         document.getElementById('toc').innerHTML = '';
         var realUrl = QZ_CATALOG.lessonUrl('backend', 'java', '六道关与模块设计', 'article.html');
         document.getElementById('articleBody').innerHTML =
@@ -140,7 +143,9 @@
               '<line x1="15" y1="30" x2="26" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>' +
             '</svg>' +
             '<h2>这一课还在整理中</h2>' +
-            '<p>《' + esc(lessonName) + '》的正式正文尚未编写，这里先留一个空位。</p>' +
+            '<p>' + (found
+              ? '《' + esc(lessonName) + '》的正式正文尚未编写，这里先留一个空位。'
+              : esc(stack.name) + ' 方向的课程尚未编写，目录暂时为空。') + '</p>' +
             '<p class="es-sub">目前已有完整正文的是「后端 / Java / 中级」11 课，含图解、交互演练与自测。</p>' +
             '<a class="es-btn" href="' + esc(realUrl) + '">去看 Java 中级第一课 →</a>' +
           '</div>';

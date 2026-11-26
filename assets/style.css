@@ -98,6 +98,8 @@ a:hover { text-decoration: underline; }
 .hs-name { font-weight: 700; white-space: nowrap; }
 .hs-first { font-size: .78rem; color: var(--muted); text-align: right; }
 .hb-stack:hover .hs-first { color: var(--accent); }
+.hb-stack.empty .hs-first { color: var(--faint); }
+.hb-stack.empty:hover .hs-first { color: var(--muted); }
 
 /* 方向页：技术栈 tab + 初级／中级／高级三块竖排课程目录 */
 .subtabs { display: flex; gap: .2rem; border-bottom: 1px solid var(--line); }
@@ -128,12 +130,35 @@ a.lesson:hover { background: var(--accent-soft); color: var(--accent); text-deco
 
 /* 级别状态徽章：已上线 / 待补 */
 .level > h2 { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+
+/* 可折叠级别组（文章页左栏）：标题整行可点，收起时只留标题行 */
+.level-toggle {
+  display: flex; align-items: center; gap: .45rem; width: 100%;
+  background: none; border: 0; margin: 0; padding: 0;
+  font: inherit; color: inherit; text-align: left; cursor: pointer;
+}
+.level-toggle:hover .lv-name { color: var(--accent); }
+.lv-caret { width: 10px; height: 10px; flex: none; color: var(--faint); transition: transform .18s ease; }
+.level.open .lv-caret { transform: rotate(90deg); }
+.lv-name { flex: 1 1 auto; min-width: 0; }
+.lv-count {
+  font: 600 .7rem var(--mono); color: var(--faint); white-space: nowrap;
+  background: #F4F2EC; border: 1px solid var(--line); border-radius: 999px; padding: 0 6px;
+}
+.level:not(.open) .level-body { display: none; }
 .lv-state {
   font-size: .7rem; font-weight: 600; letter-spacing: .5px; white-space: nowrap;
   color: var(--faint); background: #F4F2EC; border: 1px solid var(--line);
   border-radius: 999px; padding: 1px 9px;
 }
 .lv-state.on { color: #1E7268; background: #E9F4F2; border-color: #BFE0DB; }
+
+/* 目录空级别：不列占位课名，只给一行诚实提示 */
+.level-empty {
+  background: var(--paper); border: 1px dashed var(--line); border-top: none;
+  border-radius: 0 0 12px 12px; padding: .9rem 1rem;
+  font-size: .85rem; color: var(--faint);
+}
 
 /* 空课程状态：内容为空时的诚实占位 */
 .empty-state {
@@ -157,7 +182,11 @@ a.lesson:hover { background: var(--accent-soft); color: var(--accent); text-deco
   display: grid; grid-template-columns: 176px minmax(0, 1fr) 150px;
   gap: 20px; align-items: start; padding: 1.6rem 0 3.5rem;
 }
-.lesson-nav, .article-toc { position: sticky; top: 4.2rem; }
+.lesson-nav, .article-toc {
+  position: sticky; top: 4.2rem;
+  max-height: calc(100vh - 5.2rem); overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+}
 .nav-head {
   display: flex; flex-wrap: wrap; gap: .3rem .8rem; align-items: baseline;
   padding-bottom: .6rem; margin-bottom: .3rem;
@@ -225,7 +254,7 @@ a.lesson:hover { background: var(--accent-soft); color: var(--accent); text-deco
   .site-nav a { padding: .5rem .7rem; }
   .repo-link { margin-left: auto; }
   .doc-layout { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
-  .lesson-nav, .article-toc { position: static; }
+  .lesson-nav, .article-toc { position: static; max-height: none; overflow: visible; }
 }
 @media (max-width: 560px) {
   .home-lead { padding-top: 1.4rem; }
