@@ -55,33 +55,6 @@
   <script src="../assets/content/java-mid.js"></script>
   <script>
     (function () {
-      var SECTIONS = [
-        { title: '这一节解决什么问题', paras: [
-          '这里先讲清这项技术解决什么问题、在什么场景下值得用，以及它的边界在哪。',
-          '配一张图解说明它在整个系统里的位置，前后分别依赖哪些环节。'
-        ] },
-        { title: '核心原理', paras: [
-          '拆开关键概念，说明数据或请求是怎样流转的，哪些状态会发生变化。',
-          '用一次完整的流程串起各个步骤，穿插一张时序图或结构图。',
-          '最后点出这项技术最常用的参数与默认值，以及调整后会带来什么影响。'
-        ] },
-        { title: '关键步骤', paras: [
-          '从最小可运行的例子开始，一步步加上必要的配置与依赖。',
-          '每一步都给出可以核对的结果，方便判断是哪里出了问题。',
-          '把重复操作整理成脚本或模板，后面做练习时可以直接复用。'
-        ] },
-        { title: '常见坑与边界', paras: [
-          '列出几个高频问题：环境差异、并发条件、资源释放和错误处理。',
-          '说明哪些情况不适合用这项技术，替代方案各自要付出什么代价。',
-          '附上排查顺序，先确认现象，再缩小范围，最后验证修复。'
-        ] },
-        { title: '小结与自测', paras: [
-          '用几句话收束这一节，写清楚学完应该能独立完成的动作。',
-          '留 3 到 5 道自测题，覆盖概念判断、场景选型和动手排查。',
-          '给出下一节的衔接，说明后面的内容会在这个基础上补哪一块。'
-        ] }
-      ];
-
       var params = new URLSearchParams(location.search);
       var trackId = params.get('track') || 'backend';
       var track = QZ_CATALOG.getTrack(trackId);
@@ -143,7 +116,9 @@
       }
 
       var content = (window.QZ_CONTENT && QZ_CONTENT.get(trackId, stack.id, lessonName)) || null;
+      var tocAside = document.querySelector('.article-toc');
       if (content) {
+        if (tocAside) tocAside.hidden = false;
         document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 青竹 Java 学堂 · 含交互演练与自测';
         document.getElementById('articleBody').innerHTML = content.body;
         document.getElementById('toc').innerHTML = content.toc.map(function (t) {
@@ -152,21 +127,23 @@
         var ls = document.createElement('script'); ls.textContent = content.scripts; document.body.appendChild(ls);
         runLessonEnhancements();
       } else {
-        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 示例正文，正式内容待补';
-        document.getElementById('toc').innerHTML = SECTIONS.map(function (s, i) {
-          return '<a href="#sec-' + (i + 1) + '">' + (i + 1) + '. ' + esc(s.title) + '</a>';
-        }).join('');
+        if (tocAside) tocAside.hidden = true;
+        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 内容整理中';
+        document.getElementById('toc').innerHTML = '';
+        var realUrl = QZ_CATALOG.lessonUrl('backend', 'java', '六道关与模块设计', 'article.html');
         document.getElementById('articleBody').innerHTML =
-          '<div class="journey" aria-label="本课路线">' + SECTIONS.map(function (s, i) {
-            return '<div class="j-step"><span class="n">' + (i + 1) + '</span>' +
-              '<span class="t">' + esc(s.title) + '</span></div>';
-          }).join('') + '</div>' +
-          SECTIONS.map(function (s, i) {
-            return '<section class="article-section" id="sec-' + (i + 1) + '">' +
-              '<h2><span class="sec-no">' + (i + 1) + '</span>' + esc(s.title) + '</h2>' +
-              s.paras.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
-            '</section>';
-          }).join('');
+          '<div class="empty-state">' +
+            '<svg class="es-icon" viewBox="0 0 48 48" aria-hidden="true">' +
+              '<rect x="9" y="6" width="30" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/>' +
+              '<line x1="15" y1="16" x2="33" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>' +
+              '<line x1="15" y1="23" x2="33" y2="23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>' +
+              '<line x1="15" y1="30" x2="26" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>' +
+            '</svg>' +
+            '<h2>这一课还在整理中</h2>' +
+            '<p>《' + esc(lessonName) + '》的正式正文尚未编写，这里先留一个空位。</p>' +
+            '<p class="es-sub">目前已有完整正文的是「后端 / Java / 中级」11 课，含图解、交互演练与自测。</p>' +
+            '<a class="es-btn" href="' + esc(realUrl) + '">去看 Java 中级第一课 →</a>' +
+          '</div>';
       }
     })();
   </script>
