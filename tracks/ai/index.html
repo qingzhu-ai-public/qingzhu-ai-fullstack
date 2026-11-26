@@ -1,55 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 应用开发 · 青竹 AI 全栈指南</title>
-<link rel="stylesheet" href="../../assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 应用开发 · 青竹全栈学习指南</title>
+  <link rel="icon" href="../../assets/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
-<div class="topbar"><div class="topbar-in">
-  <a class="logo" href="../../index.html">青竹 · <span>AI 全栈指南</span></a>
-  <nav class="topnav">
-    <a href="../backend/index.html">后端</a>
-    <a href="../frontend/index.html">前端</a>
-    <a href="../mobile/index.html">移动端</a>
-    <a href="../cross-platform/index.html">跨平台</a>
-    <a href="../ai/index.html">AI 应用</a>
-  </nav>
-</div></div>
-<main class="wrap">
-  <a class="backlink" href="../../index.html">← 返回指南首页</a>
-  <div class="track-hero"><span class="icon">🤖</span><div><h1>AI 应用开发</h1><span class="en">AI APPLICATION · 把模型能力变成产品</span></div></div>
-  <p class="sec-desc">这是全栈指南的「AI 时代」核心增量：不是训练大模型，而是<b>把现成模型能力工程化成可靠产品</b>。懂接入、增强、编排、评估四层的原理与边界，才能选对方案、指挥 AI 搭出可控的 AI 应用。</p>
-
-  <section>
-    <div class="sec-head"><h2>四层能力</h2><span class="en">FOUR LAYERS</span></div>
-    <div class="subgrid">
-      <div class="subcard"><div class="top"><span class="icon">🔌</span><h3>LLM 接入</h3><span class="tag wait">规划中</span></div><p>把模型接进来。</p><ul><li>原理：API/流式、Token 计费、上下文窗口</li><li>工程：多模型路由、限流、超时降级</li><li>选型：直连 vs 网关、自托管 vs 云</li></ul><div class="scene">对话产品、AI 网关、模型代理</div></div>
-      <div class="subcard"><div class="top"><span class="icon">📚</span><h3>RAG 检索增强</h3><span class="tag wait">规划中</span></div><p>让模型用上私有知识。</p><ul><li>原理：嵌入、向量检索、重排、生成</li><li>工程：分块策略、向量库、引用溯源</li><li>选型：RAG vs 微调 vs 长上下文</li></ul><div class="scene">企业知识库、文档问答、客服</div></div>
-      <div class="subcard"><div class="top"><span class="icon">🧩</span><h3>Agent 编排</h3><span class="tag wait">规划中</span></div><p>让模型多步做事。</p><ul><li>原理：工具调用、ReAct、规划与反思</li><li>工程：工作流、状态、可控性与护栏</li><li>选型：单 Agent vs 多 Agent vs 固定流程</li></ul><div class="scene">自动化任务、智能助手、复杂流程</div></div>
-      <div class="subcard"><div class="top"><span class="icon">📊</span><h3>评估与可观测</h3><span class="tag wait">规划中</span></div><p>让产品可靠上线。</p><ul><li>原理：质量评估、幻觉治理、回归</li><li>工程：链路追踪、成本监控、A/B</li><li>选型：离线评估 vs 在线监控</li></ul><div class="scene">AI 产品上线、质量保障、持续优化</div></div>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../index.html">
+        <img src="../../assets/brand.svg" alt="" width="30" height="30">
+        <span>青竹全栈学习指南</span>
+      </a>
+      <nav class="site-nav" aria-label="技术栈">
+        <a href="../../index.html">总览</a>
+        <a href="../backend/index.html">后端</a>
+        <a href="../frontend/index.html">前端</a>
+        <a href="../mobile/index.html">移动端</a>
+        <a href="../cross-platform/index.html">跨平台</a>
+        <a class="is-current" href="../ai/index.html">AI 应用</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/qingzhu-ai-public/qingzhu-ai-fullstack" target="_blank" rel="noopener" aria-label="本站 GitHub 仓库">
+        <svg class="icon" aria-hidden="true"><use href="../../assets/icons.svg#github"/></svg>
+        <span>GitHub</span>
+      </a>
     </div>
-  </section>
+  </header>
 
-  <section>
-    <div class="sec-head"><h2>AI 应用选型决策</h2><span class="en">WHEN TO USE WHAT</span></div>
-    <table>
-      <tr><th>场景约束</th><th>倾向</th><th>关键理由</th></tr>
-      <tr><td>私有知识问答、知识常更新</td><td><b>RAG</b></td><td>可更新、成本低、可溯源，优于微调</td></tr>
-      <tr><td>固定风格/格式、知识稳定</td><td><b>微调</b></td><td>风格内化、推理省 Token</td></tr>
-      <tr><td>多步任务、要调工具</td><td><b>Agent</b></td><td>工具调用 + 规划，但需护栏控风险</td></tr>
-      <tr><td>流程确定、要稳定可控</td><td><b>固定工作流</b></td><td>比自由 Agent 更可预测、易验收</td></tr>
-      <tr><td>多厂商、要控成本与可用性</td><td><b>AI 网关</b></td><td>统一路由/限流/计量/降级</td></tr>
-    </table>
-    <div class="callout"><span class="tag">核心心法</span>AI 应用最大的坑是「不可控」。先想清楚要确定性还是要灵活性：能用固定流程就别上自由 Agent，能用 RAG 就别急着微调。把边界与护栏写进给 AI 的指令，产品才稳。</div>
-  </section>
+  <main class="page" id="main">
+    <div class="subtabs" id="subtabs" role="tablist" aria-label="AI 应用技术栈"></div>
+    <div id="levels"></div>
+  </main>
 
-  <section>
-    <div class="sec-head"><h2>课程规划</h2><span class="en">ROADMAP</span></div>
-    <p class="sec-desc">按「原理 → 工程 → 选型 → AI 辅助实战」展开，与后端 AI 网关（Java 中级）形成呼应：一个讲网关工程，一个讲应用能力。内容持续填充。</p>
-  </section>
-</main>
-<footer><div class="wrap"><span>青竹 · AI 全栈指南 / AI 应用开发</span><span><a href="../../index.html">返回首页</a></span></div></footer>
+  <script src="../../assets/catalog.js"></script>
+  <script>QZ_CATALOG.renderTrackPage('ai', '../article.html');</script>
 </body>
 </html>

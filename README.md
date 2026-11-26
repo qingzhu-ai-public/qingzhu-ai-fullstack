@@ -1,45 +1,40 @@
-# 青竹 · AI 全栈指南
+# 青竹 · 全栈学习指南
 
-> AI 时代的全栈学习指南：**懂原理 · 会选型 · 指挥 AI**。
-> 不追求亲手写每一行，而是知道「什么场景该用什么架构/框架」，再把实现交给 AI。
+把自己做过的课程和配套源码放在同一个站点，自己学习用，也开放给别人一起学。
 
 线上站点（GitHub Pages）：https://qingzhu-ai-public.github.io/qingzhu-ai-fullstack/
 
-## 定位
+## 这里有什么
 
-学基础原理、框架与架构的**适用边界**，按场景做技术选型，用清晰指令让 AI 生成实现，自己负责判断与验收。覆盖五大方向：
+| 内容 | 状态 | 入口 |
+|---|---|---|
+| 青竹蓝牙学堂：通用基础 + Android / iOS / 鸿蒙 / Flutter / RN 五端 BLE 实战，共 62 门正课 | 已上线 | [蓝牙学堂](https://qingzhu-ai-public.github.io/qingzhu-blue/academy/) |
+| 蓝牙学堂 Android 端 SDK 与示例源码 | 已开源 | [qingzhu-ble-android](https://github.com/qingzhu-ai-public/qingzhu-ble-android) |
+| Java 中级 11 课：用 Spring 搭 AI 网关 | 整理中，待并入本站 | 底稿在私有仓 `qingzhu-ai-fullstack-universe/courses/fullstack-java` |
+| 后端、前端、移动端、跨平台、AI 应用五个方向的学习大纲与选型笔记 | 已上线 | `tracks/` 下对应页面 |
 
-| 方向 | 覆盖 |
-|---|---|
-| 后端 | Java · Python · Go · Node.js |
-| 前端 | Vue · React |
-| 移动端 | Android · iOS · 鸿蒙 |
-| 跨平台 | Flutter · React Native |
-| AI 应用开发 | LLM 接入 · RAG · Agent · 评估可观测 |
+## 学习方法
+
+每门课按同一条线走：先讲清这项技术解决什么问题、边界在哪，再按场景做选型，最后把架构和约束写成指令交给 AI 实现，自己负责判断和验收。每课配图解、交互演练和自测。
 
 ## 目录结构
 
 ```
 qingzhu-ai-fullstack/
-├── index.html                 ← 首页 hub（理念 + 五方向 + 选型心法）
-├── assets/style.css           ← 共享设计系统
+├── index.html                 ← 首页：站点介绍 + 五大方向块，块内按技术栈直达第一课
+├── assets/
+│   ├── style.css              ← 定稿样式（沿用青竹 Java 学堂 / 蓝牙学堂课程模板配色）
+│   ├── catalog.js             ← 课程目录数据：首页、方向页、文章页左栏共用
+│   ├── brand.svg              ← 站点图标
+│   └── icons.svg              ← 图标集（GitHub）
 └── tracks/
-    ├── backend/index.html     ← 后端方向落地页
-    ├── frontend/index.html    ← 前端
-    ├── mobile/index.html      ← 移动端
-    ├── cross-platform/index.html ← 跨平台
-    └── ai/index.html          ← AI 应用开发
+    ├── article.html           ← 通用文章页：左课程目录 / 正文 / 右文章目录
+    ├── backend/index.html     ← 后端：Java / Python / Go / Node.js
+    ├── frontend/index.html    ← 前端：Vue / React
+    ├── mobile/index.html      ← 移动端：Android / iOS / 鸿蒙
+    ├── cross-platform/index.html ← 跨平台：Flutter / React Native
+    └── ai/index.html          ← AI 应用：LLM 接入 / RAG / Agent / 评估
 ```
-
-## 当前状态
-
-- ✅ 站点框架 + 首页 + 五方向落地页已上线（GitHub Pages，main 根目录）。
-- 🚧 各方向深度课程内容持续填充。Java 中级（11 课）样板已在私有仓 `qingzhu-ai-fullstack-universe/courses/fullstack-java` 写好，待并入。
-- 🔗 专项「青竹蓝牙学堂」保持独立站点，首页放外链：https://qingzhu-ai-public.github.io/qingzhu-blue/academy/
-
-## 内容模板（每课）
-
-沿用青竹蓝牙学堂的「读得进去」结构：故事化类比 + SVG 图解 + 两场交互演练 + 六题带解析自测 + 依据链接卡。决策导向：先讲「什么场景用什么、为什么」，再讲实现。
 
 ## 部署
 
