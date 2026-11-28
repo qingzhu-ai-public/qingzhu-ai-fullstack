@@ -56,6 +56,7 @@
   <script src="../assets/content/java-beg.js"></script>
   <script src="../assets/content/java-adv.js"></script>
   <script src="../assets/content/java-src.js"></script>
+  <script src="../assets/content/vue-beg.js"></script>
   <script>
     (function () {
       var params = new URLSearchParams(location.search);
@@ -123,7 +124,7 @@
       var tocAside = document.querySelector('.article-toc');
       if (content) {
         if (tocAside) tocAside.hidden = false;
-        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 青竹 Java 学堂 · 含交互演练与自测';
+        document.getElementById('articleMeta').textContent = track.label + ' / ' + stack.name + ' / ' + found.level + ' · 青竹 ' + stack.name + ' 学堂 · 含交互演练与自测';
         document.getElementById('articleBody').innerHTML = content.body;
         document.getElementById('toc').innerHTML = content.toc.map(function (t) {
           return '<a href="#' + esc(t.id) + '">' + esc(t.title) + '</a>';
@@ -147,7 +148,7 @@
             '<p>' + (found
               ? '《' + esc(lessonName) + '》的正式正文尚未编写，这里先留一个空位。'
               : esc(stack.name) + ' 方向的课程尚未编写，目录暂时为空。') + '</p>' +
-            '<p class="es-sub">目前已有完整正文的是「后端 / Java / 中级」11 课，含图解、交互演练与自测。</p>' +
+            '<p class="es-sub">Java 与 Vue 初级已有可阅读的课程，含图解、交互演练与自测。</p>' +
             '<a class="es-btn" href="' + esc(realUrl) + '">去看 Java 中级第一课 →</a>' +
           '</div>';
       }

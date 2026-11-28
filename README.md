@@ -11,6 +11,7 @@
 | 青竹蓝牙学堂：通用基础 + Android / iOS / 鸿蒙 / Flutter / RN 五端 BLE 实战，共 62 门正课 | 已上线 | [蓝牙学堂](https://qingzhu-ai-public.github.io/qingzhu-blue/academy/) |
 | 蓝牙学堂 Android 端 SDK 与示例源码 | 已开源 | [qingzhu-ble-android](https://github.com/qingzhu-ai-public/qingzhu-ble-android) |
 | Java 中级 11 课：用 Spring 搭 AI 网关（图解 + 交互演练 + 自测） | 已上线 | [后端 / Java / 中级](tracks/backend/index.html) |
+| Vue 初级 7 课 · 做出一页 AI 对话助手 | 已收录 | [前端 / Vue / 初级](tracks/frontend/index.html) · [配套工程](examples/vue-chat/README.md) |
 | 后端、前端、移动端、跨平台、AI 应用五个方向的学习大纲与选型笔记 | 已上线 | `tracks/` 下对应页面 |
 
 ## 学习方法

@@ -105,3 +105,40 @@
   .article .lab-body { grid-template-columns: 1fr; }
   .article .j-step:not(:last-child)::after { display: none; }
 }
+
+/* Vue 实战的源码块和交互控件 */
+.article .source-box {
+  margin: .65rem 0;
+  padding: .5rem .85rem;
+  border: 1px solid var(--l-line);
+  border-radius: 10px;
+  background: var(--l-card);
+}
+.article .source-box summary,
+.article .interview summary { cursor: pointer; }
+.article .source-box summary { overflow-wrap: anywhere; }
+.article .source-box pre { margin: .35rem 0; max-height: 460px; font-size: .78rem; }
+.article .source-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .8rem; margin: .4rem 0; }
+.article .source-actions .btn { padding: .24rem .7rem; font-size: .82rem; }
+.article .exercise-controls { display: flex; flex-direction: column; gap: .65rem; align-items: flex-start; min-width: 0; }
+.article .exercise-controls label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .4rem .55rem; max-width: 100%; }
+.article .exercise-controls :is(button, select, input:not([type]), input[type=text], textarea) {
+  max-width: 100%;
+  padding: .35rem .55rem;
+  color: var(--l-ink);
+  background: var(--l-card);
+  border: 1px solid var(--l-line);
+  border-radius: 7px;
+  font: inherit;
+}
+.article .exercise-controls button { cursor: pointer; background: var(--coral-soft); }
+.article .exercise-controls button:disabled { cursor: default; opacity: .55; }
+.article .output-frame { min-width: 0; }
+.article .output-frame [data-output] {
+  min-height: 6rem;
+  max-height: 18rem;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.article .interview { padding: .45rem 0; }

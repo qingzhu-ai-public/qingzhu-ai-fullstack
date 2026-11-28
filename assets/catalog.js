@@ -35,7 +35,7 @@ window.QZ_CATALOG = (function () {
       label: '前端开发', dir: 'frontend',
       stacks: [
         { id: 'vue', name: 'Vue', levels: [
-          { name: '初级', lessons: [] },
+          { name: '初级', ready: true, lessons: ["跑出 Hello World 和第一个 Vue 页面","点发送，页面出现一条消息","点发送，接到一次模型回复","再问一句，把前文带上","请求失败后，重试原来的提问","新建对话时，挡住上一条会话的迟到回复","把聊天页拆成消息列表和输入组件"] },
           { name: '中级', lessons: [] },
           { name: '高级', lessons: [] }
         ] },

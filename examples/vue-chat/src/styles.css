@@ -1,0 +1,59 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  color: #28221d;
+  background: #faf3ec;
+  font-synthesis: none;
+  line-height: 1.65;
+}
+body { margin: 0; }
+#app { padding: clamp(1rem, 5vw, 4rem) 1rem; }
+.app-shell {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid #eadfd3;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 12px 40px rgb(55 37 20 / 8%);
+}
+h1 { margin: 0 0 .35rem; font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.3; }
+p { margin: .55rem 0; }
+.messages {
+  padding: 0;
+  margin: 1rem 0;
+  min-height: 4.5rem;
+  list-style: none;
+}
+.message {
+  padding: .7rem .9rem;
+  margin: .65rem 0;
+  border: 1px solid #eadfd3;
+  border-radius: .65rem;
+  background: #fcf8f3;
+  overflow-wrap: anywhere;
+}
+.message strong { color: #805122; }
+.message p { white-space: pre-wrap; }
+.composer, .toolbar { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: 1rem 0; }
+.composer label { flex-basis: 100%; font-weight: 600; }
+.composer input, .composer textarea {
+  flex: 1 1 14rem;
+  min-width: 0;
+  border: 1px solid #bca48e;
+  border-radius: .45rem;
+  padding: .65rem .8rem;
+}
+button, input, textarea { font: inherit; }
+button {
+  padding: .58rem .9rem;
+  border: 1px solid #805122;
+  border-radius: .55rem;
+  background: #805122;
+  color: white;
+  cursor: pointer;
+}
+button:disabled { opacity: .52; cursor: default; }
+:focus-visible { outline: 2px solid #28659e; outline-offset: 2px; }
+.status { color: #5e5147; overflow-wrap: anywhere; }
+.toolbar input { accent-color: #805122; }
